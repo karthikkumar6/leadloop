@@ -15,7 +15,7 @@ npm install
 npm run dev
 ```
 
-Open the localhost address printed by Vite (usually `http://localhost:5173`). To stop the local server, press `Ctrl+C` in that terminal. The app saves its demo workspace in that browser’s local storage.
+Open the localhost address printed by Vite (usually `http://localhost:5173`). To stop the local server, press `Ctrl+C` in that terminal. The app saves its workspace in that browser’s local storage.
 
 For an instructor, share the repository for source review and a deployed static preview URL for hands-on verification. The repository alone is not a hosted app; the instructor can also run it locally using the steps above. Do not put private client data in the demo workspace or public repository.
 
@@ -28,7 +28,9 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. The first visit shows a short business setup with an optional skip. INR is the default currency. Realistic Studio June photography and event records are marked as demo data in the interface.
+Open the local URL printed by Vite. Setup lets you enter a business name and owner name. You can choose the sample Studio June records or start with an empty workspace. INR is the default currency. Sample records are marked as demo data in the interface.
+
+To change the business owner later, open **Workspace settings**, edit **Business owner name**, and save. To remove the sample leads and quotations while keeping your business details, choose **Start with an empty workspace** there. Add your own records with **New lead**. **Reset demo data** restores the original sample business and sample records.
 
 ## Production build
 
@@ -46,7 +48,7 @@ The static site is written to `dist/`. Deploy that directory to any static host 
 3. In the message assistant, change purpose and tone, edit the copy, then copy it or open the encoded `wa.me` draft. LEADLOOP never sends automatically. Use “I sent it · log contact” only after sending outside the app.
 4. Open **Leads**, filter or search, click a person, and review the context panel’s deal value and chronological history. Try a stage change or add a note.
 5. Build a quotation from that lead, add an item and discount, save it, then use **Print / PDF** and the browser’s “Save as PDF” option.
-6. Mark a lead won or lost and see the revenue, conversion, and lost-reason figures recompute from the current records. Refresh to confirm the browser save, then reset the demo from workspace settings.
+6. Mark a lead won or lost and see the revenue, conversion, and lost-reason figures recompute from the current records. Refresh to confirm the browser save. In workspace settings, change the owner name, start with an empty workspace, or restore the sample data.
 
 ## Data and business logic
 

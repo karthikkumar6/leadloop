@@ -47,6 +47,7 @@ export interface Quote {
 
 export interface Workspace {
   businessName: string
+  ownerName: string
   category: string
   currency: string
   onboardingDone: boolean

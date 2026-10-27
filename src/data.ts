@@ -35,7 +35,7 @@ export const makeDemoState = (): AppState => {
     { id:'qt-026', leadId:'ld-106', number:'LL-026', title:'Delhi wedding film · 2 days', items:[{id:'li-7',description:'Cinematic wedding film',quantity:2,price:62000},{id:'li-8',description:'Same-day edit',quantity:1,price:36000}], discount:0,tax:0,validUntil:isoDay(2),notes:'Includes licensed music and a 4–6 minute film.',status:'Draft',createdAt:stamp(-8) },
     { id:'qt-018', leadId:'ld-105', number:'LL-018', title:'Mira Shah · Wedding day', items:[{id:'li-9',description:'Full-day photo coverage',quantity:1,price:72000},{id:'li-10',description:'Fine-art album',quantity:1,price:20000}], discount:0,tax:0,validUntil:isoDay(-30),notes:'Thank you for choosing us.',status:'Accepted',createdAt:stamp(-30) },
   ]
-  return { leads, quotes, workspace:{ businessName:'Studio June', category:'Photography & events', currency:'INR', onboardingDone:false }, isDemo:true }
+  return { leads, quotes, workspace:{ businessName:'Studio June', ownerName:'Kavya Sharma', category:'Photography & events', currency:'INR', onboardingDone:false }, isDemo:true }
 }
 
 export const demoState = makeDemoState()

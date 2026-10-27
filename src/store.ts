@@ -10,7 +10,11 @@ export function readState(): AppState {
     if (!raw) return clone(demoState)
     const parsed = JSON.parse(raw) as AppState
     if (!parsed.leads || !parsed.quotes || !parsed.workspace) return clone(demoState)
-    return parsed
+    return {
+      ...parsed,
+      workspace: { ...parsed.workspace, ownerName: parsed.workspace.ownerName || 'Kavya Sharma' },
+      isDemo: typeof parsed.isDemo === 'boolean' ? parsed.isDemo : true,
+    }
   } catch { return clone(demoState) }
 }
 
@@ -23,4 +27,13 @@ export function resetState(): AppState {
   next.workspace.onboardingDone = true
   writeState(next)
   return next
+}
+
+export function emptyWorkspaceState(current: AppState): AppState {
+  return {
+    leads: [],
+    quotes: [],
+    workspace: { ...current.workspace, onboardingDone: true },
+    isDemo: false,
+  }
 }
