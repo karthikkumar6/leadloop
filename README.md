@@ -50,12 +50,11 @@ The static site is written to `dist/`. No server environment variables or API ke
 
 ### Deploy on Vercel
 
-1. Sign in at [Vercel](https://vercel.com/) and choose **Add New → Project**.
-2. Import the public GitHub repository `karthikkumar6/leadloop`.
-3. Keep the Vite defaults or confirm **Build Command** `npm run build` and **Output Directory** `dist`.
-4. Choose **Deploy**. Vercel will provide a public URL when the deployment finishes.
+**Git-connected deployment:** Sign in at [Vercel](https://vercel.com/), choose **Add New → Project**, and import `karthikkumar6/leadloop`. If the repository is missing, grant Vercel's GitHub app access to this repository in GitHub's app settings, then retry. Keep the Vite defaults or confirm **Build Command** `npm run build` and **Output Directory** `dist`, then choose **Deploy**. New commits on `main` can deploy automatically.
 
-Future commits pushed to `main` can trigger new deployments when the GitHub repository is connected. The hosted app is still a client-side demo: each viewer gets local browser data; records are not shared with the project owner or other viewers.
+**Manual static deployment:** If you do not want to connect GitHub, run `npm run build`, choose **Add New → Project → Choose a folder to deploy** in Vercel, and select this project's `dist/` folder. Name the project and deploy it. This creates a public URL, but it is not linked to GitHub: after code changes, build again and upload the new `dist/` folder.
+
+The hosted app is still a client-side demo: each viewer gets local browser data; records are not shared with the project owner or other viewers.
 
 ## What to submit to an instructor
 
