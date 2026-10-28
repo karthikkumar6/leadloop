@@ -9,7 +9,7 @@ An editorial revenue recovery desk for independent service businesses. LEADLOOP 
 LEADLOOP is a local web app, not a native `.dmg` or `.exe` installer. Install Node.js 20.19+ or 22.12+ (npm is included), then either download the project ZIP from GitHub and extract it, or clone the repository:
 
 ```sh
-git clone <repository-url>
+git clone https://github.com/karthikkumar6/leadloop.git
 cd leadloop
 npm install
 npm run dev
@@ -17,7 +17,9 @@ npm run dev
 
 Open the localhost address printed by Vite (usually `http://localhost:5173`). To stop the local server, press `Ctrl+C` in that terminal. The app saves its workspace in that browser’s local storage.
 
-For an instructor, share the repository for source review and a deployed static preview URL for hands-on verification. The repository alone is not a hosted app; the instructor can also run it locally using the steps above. Do not put private client data in the demo workspace or public repository.
+If you already cloned LEADLOOP, stop its running server with `Ctrl+C`, run `git pull origin main` from that clone, and then run `npm run dev` again. The browser page does not update just because GitHub changed.
+
+For an instructor, share the GitHub repository for source review and a deployed Vercel URL for hands-on verification. The repository alone is not a hosted app. Never share a `localhost` link or put real client details in this public demo repository.
 
 ## Run locally
 
@@ -28,9 +30,14 @@ npm install
 npm run dev
 ```
 
-Open the local URL printed by Vite. Setup lets you enter a business name and owner name. You can choose the sample Studio June records or start with an empty workspace. INR is the default currency. Sample records are marked as demo data in the interface.
+Open the local URL printed by Vite. Setup lets you enter a business name and owner name. Choose **Use sample leads** to explore Studio June, or **Start empty** to create a workspace for your own business. INR is the default currency. Sample records are marked as demo data in the interface.
 
-To change the business owner later, open **Workspace settings**, edit **Business owner name**, and save. To remove the sample leads and quotations while keeping your business details, choose **Start with an empty workspace** there. Add your own records with **New lead**. **Reset demo data** restores the original sample business and sample records.
+### Use your own business details and records
+
+- To change the business name, owner name, or business category, open **Workspace settings**, edit the fields, and choose **Save workspace**. The owner name also updates the dashboard greeting and profile label.
+- If you started with sample data, choose **Start with an empty workspace** in settings and confirm. LEADLOOP clears sample leads and quotations while keeping the business, owner, and category you entered. Then choose **New lead** and add your own records.
+- **Reset demo data** restores the original Studio June sample business and sample records. Use **Start with an empty workspace** when you want a blank personal workspace.
+- Workspace data is stored in the current browser’s local storage. It is separate for each browser and device, does not sync to Vercel or GitHub, and is not protected like an authenticated account. Use fictional or demo data in a public presentation.
 
 ## Production build
 
@@ -39,11 +46,31 @@ npm run build
 npm run preview
 ```
 
-The static site is written to `dist/`. Deploy that directory to any static host such as Vercel, Netlify, Cloudflare Pages, or an S3 website bucket. No server environment variables or API keys are needed. For client-side routing, configure the host to serve `index.html` as the fallback; the current prototype uses in-app state and does not require deep-link rewrites.
+The static site is written to `dist/`. No server environment variables or API keys are needed.
+
+### Deploy on Vercel
+
+1. Sign in at [Vercel](https://vercel.com/) and choose **Add New → Project**.
+2. Import the public GitHub repository `karthikkumar6/leadloop`.
+3. Keep the Vite defaults or confirm **Build Command** `npm run build` and **Output Directory** `dist`.
+4. Choose **Deploy**. Vercel will provide a public URL when the deployment finishes.
+
+Future commits pushed to `main` can trigger new deployments when the GitHub repository is connected. The hosted app is still a client-side demo: each viewer gets local browser data; records are not shared with the project owner or other viewers.
+
+## What to submit to an instructor
+
+Share these items in the assignment submission:
+
+1. **Live demo:** the Vercel URL, once deployment succeeds.
+2. **Source code:** [the public GitHub repository](https://github.com/karthikkumar6/leadloop).
+3. **Short walkthrough:** show the dashboard, Follow-up Radar, a lead’s history, a draft WhatsApp message, quotation print/PDF, an outcome change, and the analytics. Use sample data or clearly label any fictional records.
+4. **Setup note:** the README’s run instructions, plus the note that demo data stays in the browser and the prototype has no login or shared database.
+
+Do not submit `localhost`, the local network IP, real customer data, API keys, or passwords.
 
 ## 90-second walkthrough
 
-1. Skip setup and notice the **DEMO DATA** label. The overview shows the current open pipeline, won revenue, overdue and due-today work, and close rate.
+1. On setup, choose **Use sample leads** to see the labeled demo workspace, or **Start empty** to see your own blank workspace. The overview shows pipeline, won revenue, follow-ups, and close rate calculated from the current records.
 2. Open **Follow-up radar**. Read the reason attached to an overdue, due-today, stale high-value, or upcoming lead. Open a lead, draft a WhatsApp note, or schedule a reminder.
 3. In the message assistant, change purpose and tone, edit the copy, then copy it or open the encoded `wa.me` draft. LEADLOOP never sends automatically. Use “I sent it · log contact” only after sending outside the app.
 4. Open **Leads**, filter or search, click a person, and review the context panel’s deal value and chronological history. Try a stage change or add a note.
