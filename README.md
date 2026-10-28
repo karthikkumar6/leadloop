@@ -2,6 +2,8 @@
 
 An editorial revenue recovery desk for independent service businesses. LEADLOOP brings lead follow-ups, deal context, quotations, activity history, and simple revenue signals into one small workspace.
 
+**Live demo:** [Open LEADLOOP on Vercel](https://leadloop-three.vercel.app/).
+
 ![LEADLOOP overview](preview.png)
 
 ## Install on a laptop
@@ -60,7 +62,7 @@ The hosted app is still a client-side demo: each viewer gets local browser data;
 
 Share these items in the assignment submission:
 
-1. **Live demo:** the Vercel URL, once deployment succeeds.
+1. **Live demo:** [LEADLOOP on Vercel](https://leadloop-three.vercel.app/).
 2. **Source code:** [the public GitHub repository](https://github.com/karthikkumar6/leadloop).
 3. **Short walkthrough:** show the dashboard, Follow-up Radar, a lead’s history, a draft WhatsApp message, quotation print/PDF, an outcome change, and the analytics. Use sample data or clearly label any fictional records.
 4. **Setup note:** the README’s run instructions, plus the note that demo data stays in the browser and the prototype has no login or shared database.
